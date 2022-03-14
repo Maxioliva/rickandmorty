@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Navbar from "./components/navbar";
+import { get } from "./utils/httpClient";
 
 function App() {
+  useEffect(() => {
+    (async () => {
+      const characters = await get("/character/2");
+      console.log(characters);
+    })();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h1> Rick and Morty Episodes </h1>
       </header>
+      <main>
+        {" "}
+        <Navbar title="hola" />
+      </main>
     </div>
   );
 }
