@@ -4,6 +4,8 @@ import { get } from "./utils/httpClient";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import { CharacterGrid } from "./components/header/CharacterGrid";
 import { LandingPage } from "./pages/LandingPage";
+import "./App.css";
+import { CharacterDetails } from "./pages/CharacterDetails";
 
 function App() {
   //useEffect(() => {
@@ -16,14 +18,18 @@ function App() {
   return (
     <Router>
       <header>
-        <Navbar title="hola" />
+        <Navbar title="navar en construccion" />
         <Link to="/">
-          <h1> Rick and Morty Episodes </h1>
+          <h1 className="title"> Rick and Morty Characters </h1>
         </Link>
       </header>
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route
+            path="/character/:characterId"
+            element={<CharacterDetails />}
+          />
         </Routes>{" "}
       </main>
     </Router>
