@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { get } from "../utils/httpClient";
 import { Character } from "../utils/Type";
+import "./CharacterDetails.css";
 
-type CharacterCardProps = {
-  character: Character;
-};
+//type CharacterCardProps = {
+//character: Character;
+//};
 
 export function CharacterDetails() {
   const { characterId } = useParams();
@@ -26,21 +27,17 @@ export function CharacterDetails() {
 
   return (
     <div className="detailsContainer">
-      <img
-        className={`$"col" $"movieImage"`}
-        src={imageUrl}
-        alt={character.name}
-      />
-      <div className={`$"col" $"movieDetails"`}>
+      <img className="col movieImage" src={imageUrl} alt={character.name} />
+      <div className="col movieDetails">
         <p className="firstItem">
           <strong>Title:</strong> {character.name}
         </p>
         <p>
-          <strong>Status:</strong>{" "}
+          <strong>Status:</strong> {character.status}
           {/*{character.status.map((status) => status.name).join(", ")} */}
         </p>
         <p>
-          <strong>gender:</strong> {character.gender}
+          <strong>Gender:</strong> {character.gender}
         </p>
       </div>
     </div>
