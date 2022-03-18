@@ -30,7 +30,7 @@ export function CharacterDetails() {
       <img className="col movieImage" src={imageUrl} alt={character.name} />
       <div className="col movieDetails">
         <p className="firstItem">
-          <strong>Title:</strong> {character.name}
+          <strong>Name:</strong> {character.name}
         </p>
         <p>
           <strong>Status:</strong> {character.status}

@@ -6,6 +6,7 @@ import { CharacterGrid } from "./components/header/CharacterGrid";
 import { LandingPage } from "./pages/LandingPage";
 import "./App.css";
 import { CharacterDetails } from "./pages/CharacterDetails";
+import Pagination from "./components/header/Pagination";
 
 function App() {
   //useEffect(() => {

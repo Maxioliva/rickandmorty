@@ -3,6 +3,7 @@ import { get } from "../../utils/httpClient";
 import CharacterCard from "./CharacterCard";
 import { Character } from "../../utils/Type";
 import "./CharacterGrid.css";
+import Pagination from "./Pagination";
 
 export function CharacterGrid() {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -22,5 +23,3 @@ export function CharacterGrid() {
     </ul>
   );
 }
-
-//  key={character.results.id}
