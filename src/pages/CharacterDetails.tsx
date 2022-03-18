@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { get } from "../utils/httpClient";
+import { getCharacter } from "../utils/httpClient";
 import { Character } from "../utils/Type";
 import "./CharacterDetails.css";
 
@@ -13,8 +13,7 @@ export function CharacterDetails() {
   const [character, setCharacter] = useState<Character>();
 
   useEffect(() => {
-    get("/character/" + characterId).then((data) => {
-      console.log(character);
+    getCharacter("/character/" + characterId).then((data) => {
       setCharacter(data);
     });
   }, [characterId]);

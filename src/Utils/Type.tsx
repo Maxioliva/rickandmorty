@@ -5,3 +5,8 @@ export type Character = {
   status: string;
   gender: string;
 };
+
+export type Info = {
+  next?: string;
+  prev?: string;
+};
