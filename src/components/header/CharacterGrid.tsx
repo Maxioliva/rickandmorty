@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { get } from "../../utils/httpClient";
 import CharacterCard from "./CharacterCard";
 import { Character } from "../../utils/Type";
+import "./CharacterGrid.css";
+import Pagination from "./Pagination";
 
 export function CharacterGrid() {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -14,12 +16,10 @@ export function CharacterGrid() {
   }, []);
 
   return (
-    <ul>
+    <ul className="characterGrid">
       {characters.map((character) => (
         <CharacterCard key={character.id} character={character} />
       ))}
     </ul>
   );
 }
-
-//  key={character.results.id}

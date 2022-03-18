@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Character } from "../../utils/Type";
+import "./CharacterCard.css";
 
 type CharacterCardProps = {
   character: Character;
@@ -8,9 +9,15 @@ type CharacterCardProps = {
 const CharacterCard = ({ character }: CharacterCardProps) => {
   const imageUrl = character.image;
   return (
-    <li>
+    <li className="characterCard">
       <Link to={"/character/" + character.id}>
-        <img width={230} src={imageUrl} alt={character.name} height={345} />
+        <img
+          width={230}
+          className="characterImage"
+          src={imageUrl}
+          alt={character.name}
+          height={345}
+        />
         <div>{character.name}</div>
       </Link>
     </li>
