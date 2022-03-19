@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Character } from "../../utils/Type";
-import "./CharacterCard.css";
+import { Character } from "../../Utils/Type";
+import "./style.css";
 
 type CharacterCardProps = {
   character: Character;

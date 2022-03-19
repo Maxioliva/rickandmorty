@@ -1,4 +1,4 @@
-import { Info } from "../../utils/Type";
+import { Info } from "../../Utils/Type";
 
 type Election = "next" | "prev";
 

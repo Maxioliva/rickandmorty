@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getCharacters } from "../../utils/httpClient";
-import CharacterCard from "./CharacterCard";
-import { Character } from "../../utils/Type";
+import { getCharacters } from "../../Utils/httpClient";
+import CharacterCard from "../characterCard";
+import { Character } from "../../Utils/Type";
 import "./CharacterGrid.css";
 import Pagination from "./Pagination";
-import { Info } from "../../utils/Type";
+import { Info } from "../../Utils/Type";
 
 export function CharacterGrid() {
   const [characters, setCharacters] = useState<Character[]>([]);

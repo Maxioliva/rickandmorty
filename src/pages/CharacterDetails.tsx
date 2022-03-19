@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getCharacter } from "../utils/httpClient";
-import { Character } from "../utils/Type";
+import { getCharacter } from "../Utils/httpClient";
+import { Character } from "../Utils/Type";
 import "./CharacterDetails.css";
 
 //type CharacterCardProps = {
