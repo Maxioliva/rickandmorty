@@ -1,4 +1,4 @@
-const BASE_URL = "https://rickandmortyapi.com/api";
+export const BASE_URL = "https://rickandmortyapi.com/api";
 
 //export function get(path: string) {
 //return fetch(BaseUrl + path).then((result) => result.json());

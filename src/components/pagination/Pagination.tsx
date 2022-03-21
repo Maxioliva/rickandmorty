@@ -20,7 +20,7 @@ const Pagination = (props: PaginationProps) => {
             return;
           }
           return (
-            <li className="page-item">
+            <li className="page-item" key={election}>
               <button onClick={() => props.onPaginationChange(election)}>
                 {election}
               </button>

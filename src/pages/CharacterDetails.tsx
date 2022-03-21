@@ -4,10 +4,6 @@ import { getCharacter } from "../Utils/httpClient";
 import { Character } from "../Utils/Type";
 import "./CharacterDetails.css";
 
-//type CharacterCardProps = {
-//character: Character;
-//};
-
 export function CharacterDetails() {
   const { characterId } = useParams();
   const [character, setCharacter] = useState<Character>();
@@ -33,7 +29,6 @@ export function CharacterDetails() {
         </p>
         <p>
           <strong>Status:</strong> {character.status}
-          {/*{character.status.map((status) => status.name).join(", ")} */}
         </p>
         <p>
           <strong>Gender:</strong> {character.gender}
