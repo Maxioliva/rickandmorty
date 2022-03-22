@@ -1,3 +1,6 @@
-.title {
-  color: brown;
+.searchInput {
+  height: 25px;
+  border-radius: 10px;
+  padding: 5px 30px 5px 10px;
+  margin-left: 80px;
 }

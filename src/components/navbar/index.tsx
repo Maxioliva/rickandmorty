@@ -24,7 +24,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
 
   return (
     <div>
-      <h1 className="title">navar</h1>
+      <h1 className="title">Character Searching</h1>
       <input
         className="searchInput"
         type="text"
@@ -37,7 +37,10 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         onSelect={selectHandler}
         options={["Alive", "Dead", "Unknown"]}
       />
-      <button onClick={submitHandler}> search </button>
+      <button className="button" onClick={submitHandler}>
+        {" "}
+        search{" "}
+      </button>
     </div>
   );
 };

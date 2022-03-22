@@ -1,4 +1,23 @@
 .option {
-  border: 1px solid blue;
+  border: 4px;
   background-color: white;
+  border-radius: 5px;
+  font-size: large;
+  margin: 5px;
+  width: 100px;
+  margin-left: 80px;
+  color: black;
+}
+
+.button {
+  margin-left: 80px;
+}
+
+.control {
+  margin-left: 80px;
+  font-size: large;
+}
+
+.option.isSelected {
+  background-color: green;
 }

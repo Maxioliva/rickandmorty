@@ -15,8 +15,9 @@ const Select = ({ options, onSelect, currentSelection }: SelectProps) => {
   return (
     <div className="selectContainer">
       <div className="control" onClick={() => setIsOpen(!isOpen)}>
-        status
+        <strong>Status</strong>
       </div>
+
       {isOpen && (
         <div className="options">
           {options.map((option) => (
