@@ -1,4 +1,5 @@
-import { Info } from "../../utils/Type";
+import { Info } from "../../Utils/Type";
+import "./style.css";
 
 type Election = "next" | "prev";
 
@@ -20,8 +21,11 @@ const Pagination = (props: PaginationProps) => {
             return;
           }
           return (
-            <li className="page-item">
-              <button onClick={() => props.onPaginationChange(election)}>
+            <li className="page-item" key={election}>
+              <button
+                className="next"
+                onClick={() => props.onPaginationChange(election)}
+              >
                 {election}
               </button>
             </li>

@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getCharacter } from "../utils/httpClient";
-import { Character } from "../utils/Type";
+import { getCharacter } from "../Utils/httpClient";
+import { Character } from "../Utils/Type";
 import "./CharacterDetails.css";
-
-//type CharacterCardProps = {
-//character: Character;
-//};
 
 export function CharacterDetails() {
   const { characterId } = useParams();
@@ -33,7 +29,6 @@ export function CharacterDetails() {
         </p>
         <p>
           <strong>Status:</strong> {character.status}
-          {/*{character.status.map((status) => status.name).join(", ")} */}
         </p>
         <p>
           <strong>Gender:</strong> {character.gender}
