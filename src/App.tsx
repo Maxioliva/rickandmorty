@@ -18,6 +18,7 @@ function App() {
     <Router>
       <header>
         {/* <Search /> */}
+        <h1 className="title">Rick and Morty Proyect</h1>
         <Navbar onSearch={onCharacterSearch} />
         <Link to="/">
           <h1 className="title"> Rick and Morty Characters </h1>

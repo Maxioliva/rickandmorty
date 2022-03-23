@@ -23,8 +23,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
   };
 
   return (
-    <div>
-      <h1 className="title">Character Searching</h1>
+    <div className="navbarContainer">
       <input
         className="searchInput"
         type="text"
@@ -39,7 +38,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
       />
       <button className="button" onClick={submitHandler}>
         {" "}
-        search{" "}
+        Search{" "}
       </button>
     </div>
   );
