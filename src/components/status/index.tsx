@@ -5,12 +5,16 @@ import "./style.css";
 
 type SelectProps = {
   options: string[];
-  onSelect: (selectedOption: string) => void;
+  onSelect: (filter: "status" | "gender", selection: string) => void;
   currentSelection?: string;
 };
 
 const Select = ({ options, onSelect, currentSelection }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const selectHandler = (option: string) => {
+    onSelect("status", option);
+    setIsOpen(false);
+  };
 
   return (
     <div className="selectContainer">
@@ -22,7 +26,7 @@ const Select = ({ options, onSelect, currentSelection }: SelectProps) => {
         <div className="options">
           {options.map((option) => (
             <div
-              onClick={() => onSelect(option)}
+              onClick={() => selectHandler(option)}
               className={classNames("option", {
                 isSelected: option === currentSelection,
               })}

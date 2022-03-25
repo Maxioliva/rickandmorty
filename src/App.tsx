@@ -21,7 +21,7 @@ function App() {
         <h1 className="title">Rick and Morty Proyect</h1>
         <Navbar onSearch={onCharacterSearch} />
         <Link to="/">
-          <h1 className="title"> Rick and Morty Characters </h1>
+          <h1 className="title"> Characters </h1>
         </Link>
       </header>
       <main>
