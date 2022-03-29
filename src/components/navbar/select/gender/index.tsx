@@ -1,7 +1,8 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import useClickOutside from "../../../../hooks/useClickOutside";
 
-// import "./style.css";
+const selectClick = useClickOutside;
 
 type SelectProps = {
   options: string[];
@@ -10,10 +11,17 @@ type SelectProps = {
 };
 
 const Gender = ({ options, onSelect, currentSelection }: SelectProps) => {
+  const selectRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const selectHandler = (option: string) => {
+    onSelect("gender", option);
+    setIsOpen(false);
+  };
+
+  useClickOutside({ ref: selectRef, callback: () => setIsOpen(false) });
 
   return (
-    <div className="selectContainer">
+    <div ref={selectRef} className="selectContainer">
       <div className="control" onClick={() => setIsOpen(!isOpen)}>
         <strong>Gender</strong>
       </div>
@@ -22,7 +30,7 @@ const Gender = ({ options, onSelect, currentSelection }: SelectProps) => {
         <div className="options">
           {options.map((option) => (
             <div
-              onClick={() => onSelect("gender", option)}
+              onClick={() => selectHandler(option)}
               className={classNames("option", {
                 isSelected: option === currentSelection,
               })}

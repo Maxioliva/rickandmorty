@@ -1,7 +1,10 @@
 import classNames from "classnames";
-import { useState } from "react";
-
+import { MutableRefObject, RefObject, useRef, useState } from "react";
+import { useEffect } from "react";
 import "./style.css";
+import useClickOutside from "../../../../hooks/useClickOutside";
+
+const selectClick = useClickOutside;
 
 type SelectProps = {
   options: string[];
@@ -10,14 +13,17 @@ type SelectProps = {
 };
 
 const Select = ({ options, onSelect, currentSelection }: SelectProps) => {
+  const selectRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const selectHandler = (option: string) => {
     onSelect("status", option);
     setIsOpen(false);
   };
 
+  useClickOutside({ ref: selectRef, callback: () => setIsOpen(false) });
+
   return (
-    <div className="selectContainer">
+    <div ref={selectRef} className="selectContainer">
       <div className="control" onClick={() => setIsOpen(!isOpen)}>
         <strong>Status</strong>
       </div>

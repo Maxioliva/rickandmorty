@@ -2,8 +2,8 @@ import { type } from "@testing-library/user-event/dist/type";
 import "./style.css";
 import { Search } from "../../Utils/Type";
 import { useState } from "react";
-import Status from "../status";
-import Gender from "../gender";
+import Status from "./select/status";
+import Gender from "./select/gender";
 
 type NavbarProps = {
   onSearch: (newSearch: Search) => void;
