@@ -18,29 +18,39 @@ export function CharacterGrid({ search }: CharacterGridProps) {
     if (!info) {
       return;
     }
-    getCharacters(info[election]).then((data) => {
-      setCharacters(data.results);
-      setInfo(data.info);
-    });
+    try {
+      getCharacters(info[election]).then((data) => {
+        setCharacters(data.results);
+        setInfo(data.info);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    console.log("searchchange", search);
     if (!search) {
       return;
     }
-    let path = BASE_URL + "/character";
+    const path = new URLSearchParams();
     if (search.text) {
-      path = path + `/?name=${search.text}`;
+      path.set("name", search.text);
     }
     if (search.status) {
-      path = path + `${search.text ? "&" : "?"}status=${search.status}`;
+      path.set("status", search.status);
+    }
+    if (search.gender) {
+      path.set("gender", search.gender);
     }
 
-    getCharacters(path).then((data) => {
-      setCharacters(data.results);
-      setInfo(data.info);
-    });
+    try {
+      getCharacters(BASE_URL + "/character?" + path.toString()).then((data) => {
+        setCharacters(data.results);
+        setInfo(data.info);
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }, [search]);
 
   useEffect(() => {

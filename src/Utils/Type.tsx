@@ -14,4 +14,5 @@ export type Info = {
 export type Search = {
   text?: string;
   status?: string;
+  gender?: string;
 };
